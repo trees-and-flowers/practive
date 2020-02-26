@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstdio>
+#include<Windows.h>
+using namespace std;
+int main()
+{
+    int x = 5, y = 5, dx, dy;
+    char mv;
+    while (1) {
+        dx = 9;
+        dy = 9;
+        printf("W to up;S to down;A to left;D to right;Enter to go（Made by trees-and-flowers）\n");
+        while (dy > y) {
+            printf("┼┼┼┼┼┼┼┼┼┼\n");
+            dy--;
+        }
+        while (dx > x) {
+            printf("┼");
+            dx--;
+        }
+        printf("★");
+        while (dx <= x && dx > 0){
+            printf("┼");
+            dx--;
+        }
+        printf("\n");
+        while (dy <= y && dy > 0) {
+            printf("┼┼┼┼┼┼┼┼┼┼\n");
+            dy--;
+        }
+        cin >> mv;
+        if (mv ==  'w' || mv == 'W')y++;
+        if (mv ==  's' || mv == 'S')y--;
+        if (mv ==  'a' || mv == 'A')x++;
+        if (mv ==  'd' || mv == 'D')x--;
+        if (x < 0)x = 0;
+        if (x > 9)x = 9;
+        if (y < 0)y = 0;
+        if (y > 9)y = 9;
+        system("cls");
+    }
+    return 0;
+}
